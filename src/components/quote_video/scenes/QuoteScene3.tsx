@@ -1,32 +1,16 @@
-import { motion } from 'framer-motion';
+import { FadeText, StaggerText } from '../utils';
 
 export const QuoteScene3 = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, filter: 'blur(10px)' }}
-      transition={{ duration: 1.5, ease: "easeInOut" }}
-      className="absolute inset-0 flex items-center justify-center p-8 text-center"
-    >
-      <motion.p
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 1.8 }}
-        className="text-2xl md:text-3xl lg:text-4xl text-neutral-400 font-light leading-relaxed tracking-wide max-w-2xl"
-      >
-        Z uśmiechania się wtedy,
+    <div className="w-full">
+      <p className="text-3xl md:text-5xl lg:text-5xl text-neutral-300 font-light leading-relaxed tracking-wide max-w-3xl mx-auto" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8)' }}>
+        <FadeText delay={0.5} className="text-neutral-400">
+          Z uśmiechania się wtedy,
+        </FadeText>
         <br />
         <br />
-        <motion.span 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 1.5 }}
-          className="text-white md:text-5xl lg:text-6xl text-3xl font-normal"
-        >
-          gdy w środku powoli tracisz siłę.
-        </motion.span>
-      </motion.p>
-    </motion.div>
+        <StaggerText delay={1.8} text="gdy w środku powoli tracisz siłę." className="text-white font-normal" />
+      </p>
+    </div>
   );
 };
